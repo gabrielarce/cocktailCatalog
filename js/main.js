@@ -58,12 +58,15 @@ function renderDrinkInfo(data) {
 function renderIngredients(data) {
     //get only truthy values ingredients
     document.querySelector(".ingredients").innerHTML = ""
-    document.querySelector(".measurements").innerHTML = ""
     let indgredients = [];
+    let measurements = [];
     for (let property in data) {
 
         if (property.includes("strIngredient") && data[property]) {
             indgredients.push(data[property])
+            console.log(data[property])
+        } else if (property.includes("strMeasure") && data[property]) {
+            measurements.push(data[property])
             console.log(data[property])
         }
     }
@@ -71,25 +74,7 @@ function renderIngredients(data) {
     for (let i = 0; i < indgredients.length; i++) {
         let ingredientsList = document.querySelector(".ingredients")
         let li = document.createElement("li")
-        li.innerHTML = indgredients[i]
+        li.innerHTML = indgredients[i] + " " + measurements[i]
         ingredientsList.appendChild(li)
-    }
-
-    //get only truthy values for measurements
-    let measurements = [];
-    for (let property in data) {
-
-        if (property.includes("strMeasure") && data[property]) {
-            measurements.push(data[property])
-            console.log(data[property])
-        }
-    }
-
-    //add ingredients to DOM
-    for (let i = 0; i < indgredients.length; i++) {
-        let measurementList = document.querySelector(".measurements")
-        let li = document.createElement("li")
-        li.innerHTML = measurements[i]
-        measurementList.appendChild(li)
     }
 }
