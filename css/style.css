@@ -2,6 +2,7 @@
 /* CSS
 /*******************************************/
 
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400&display=swap');
 
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
@@ -183,12 +184,13 @@ header {
     width: 100%;
     justify-content: center;
     align-items: center;
-    background-color: #031924e8;
+    background-color: rgba(3, 25, 36, .95);
 }
 
 h1 {
-    color: aliceblue;
-    font-size: 2rem;
+    color: #e0119c;
+    font-size: 3rem;
+    font-family: 'Dancing Script', cursive;
 }
 
 .alphabetNav {
@@ -273,6 +275,7 @@ main {
     width: 85%;
     padding-top: 5%;
     margin-bottom: 10%;
+    margin-left: 5%
 }
 
 .drinkPanel .imageContainer {
@@ -293,6 +296,7 @@ main {
     width: 70%;
     padding-left: 5%;
     justify-content: flex-end;
+    padding-right: 10%;
 }
 
 .ingredients li {
